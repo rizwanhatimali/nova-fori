@@ -1,0 +1,32 @@
+<div class="container" style="border:solid 1px #000000;">
+    <div class="row">
+        <div class="col-md-6">
+            <div style = "margin-top: 50px;" class = "mb-4">
+                <div class = "mb-4">
+                    <h4 class="mb-3">Create New To Do Item:</h4>
+                </div>
+            </div>
+            <div class="col-md-6 lh-125">
+                <form [formGroup]="form" (ngSubmit)="submit()">  
+                    <div class="form-group">
+                        <input 
+                            formControlName="description"
+                            id="description" 
+                            type="text" 
+                            class="form-control"
+                            placeholder="Add ToDo Item Description"> <br />
+                            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div style = "margin-top: 50px;">
+                <h4 class="mb-3">Pending To Do Items</h4>
+            </div>
+            <app-list-to-do [status] = "this.toDoStatus.Pending" [changeNotification]="this.infoChange" (statusToggled)="this. refreshLists();"></app-list-to-do>    
+            <div style = "margin-top: 50px;" class = "mb-4">
+                <h4 class="mb-3">Completed To Do Items:</h4>
+            </div>
+            <app-list-to-do [status] = "this.toDoStatus.Completed" [changeNotification]="this.infoChange" (statusToggled)="this. refreshLists();"></app-list-to-do>
+        </div>
+    </div>
+</div> 
