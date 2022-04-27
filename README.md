@@ -52,7 +52,7 @@ API--x Frontend : HttpResponse
 ```
 API Endpoints are async so as to prevent blocking of UI Thread. It currently use In Memory database. The Exceptions are handled in UI Layer by logging them in console.
 
-This is the better architecture for sake of simplicity. However, there is a scope of adding logging middleware,  implementing dependency injections and singleton and repository design pattern to improve the implementation.
+This is the better architecture for sake of simplicity. However, there is a scope of adding logging middleware,  implementing singleton and repository design patterns to improve the implementation.
 
 ## If you were unable to complete any user stories, outline why and how would you have liked to implement them.
 
